@@ -12,7 +12,7 @@ import cucumber.api.java.pt.Quando;
 @SpringBootTest
 public class CalculadoraSteps {
 	private Calculadora calculadora;
-	private String resultado;
+	private int resultado;
 	
 	@Dado("^que eu acabei de ligar minha calculadora$")
 	public void que_eu_acabei_de_ligar_minha_calculadora() throws Throwable {
@@ -26,17 +26,6 @@ public class CalculadoraSteps {
 
 	@Então("^o resultado é (\\d+)$")
 	public void o_resultado_é(int arg1) throws Throwable {
-	    assertEquals(String.valueOf(arg1), resultado);
+	    assertEquals(arg1, resultado);
 	}
-	
-	@Quando("^eu divido (\\d+) por (\\d+)$")
-	public void eu_divido_por(int arg1, int arg2) throws Throwable {
-	    resultado = calculadora.dividir(arg1, arg2);
-	}
-
-	@Então("^o resultado é \"([^\"]*)\"$")
-	public void o_resultado_é(String arg1) throws Throwable {
-		assertEquals(arg1, resultado);
-	}
-
 }
