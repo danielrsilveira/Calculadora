@@ -1,17 +1,19 @@
 #language: pt
 
 Funcionalidade: Aritmética Básica
-Cenário: Adição
+
+Contexto:
 Dado que eu acabei de ligar minha calculadora
+
+Cenário: Adição
 Quando eu adiciono 4 e 5
 Então o resultado é 9
 
-Cenário: Divisão
-Dado que eu acabei de ligar minha calculadora
-Quando eu divido 8 por 4
-Então o resultado é 2
-
-Cenário: Divisão por zero
-Dado que eu acabei de ligar minha calculadora
-Quando eu divido 8 por 0
-Então o resultado é "Erro: divisão por zero"
+Esquema do Cenário: Divisão
+Quando eu divido <quociente> por <divisor> 
+Então o resultado é <resultado>
+Exemplos:
+| quociente | divisor | resultado                |
+|     8     |   4     | "2"                      |
+|     6     |   4     | "1,5"                    |      
+|     8     |   0     | "Erro: divisão por zero" |
