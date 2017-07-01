@@ -15,5 +15,6 @@ Então o resultado é <resultado>
 Exemplos:
 | quociente | divisor | resultado                |
 |     8     |   4     | "2"                      |
-|     6     |   4     | "1,5"                    |      
+|     6     |   4     | "1,5"                    |
+|     3     |   2     | "1,5"                    |      
 |     8     |   0     | "Erro: divisão por zero" |
