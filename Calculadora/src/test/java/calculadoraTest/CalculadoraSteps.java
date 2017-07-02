@@ -25,7 +25,7 @@ public class CalculadoraSteps {
 
 	@Então("^o resultado é (\\d+)$")
 	public void o_resultado_é(int arg1) throws Throwable {
-	    assertEquals(String.valueOf(arg1), calculadora.resultado);
+	    assertEquals(String.valueOf(arg1), calculadora.getResultado());
 	}
 	
 	@Quando("^eu divido (\\d+) por (\\d+)$")
@@ -35,7 +35,7 @@ public class CalculadoraSteps {
 
 	@Então("^o resultado é \"([^\"]*)\"$")
 	public void o_resultado_é(String arg1) throws Throwable {
-		assertEquals(arg1, calculadora.resultado);
+		assertEquals(arg1, calculadora.getResultado());
 	}
 
 }
