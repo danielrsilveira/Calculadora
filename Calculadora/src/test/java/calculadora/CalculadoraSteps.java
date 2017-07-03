@@ -1,4 +1,4 @@
-package calculadoraTest;
+package calculadora;
 
 import org.springframework.boot.test.context.SpringBootTest;
 
