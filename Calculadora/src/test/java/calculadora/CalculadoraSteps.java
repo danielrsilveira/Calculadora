@@ -1,4 +1,4 @@
-package calculadoraTest;
+package calculadora;
 
 import static org.junit.Assert.assertEquals;
 
