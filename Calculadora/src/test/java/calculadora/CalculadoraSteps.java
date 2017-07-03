@@ -1,4 +1,4 @@
-package calculadoraTest;
+package calculadora;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -6,6 +6,8 @@ import org.fluentlenium.adapter.cucumber.FluentCucumberTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.test.context.ContextConfiguration;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -15,7 +17,8 @@ import cucumber.api.java.pt.Então;
 import cucumber.api.java.pt.Quando;
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment=WebEnvironment.DEFINED_PORT)
+@ContextConfiguration
 public class CalculadoraSteps extends FluentCucumberTest{
 	
 	@Override 
