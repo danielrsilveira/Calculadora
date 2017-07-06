@@ -19,9 +19,14 @@ public class CalculadoraSteps {
 	public void eu_adiciono_e(int arg1, int arg2) throws Throwable {
 		calculadora.adicionar(arg1, arg2);
 	}
-
-	@Então("^o resultado é (\\d+)$")
-	public void o_resultado_é(int arg1) throws Throwable {
+	
+	@Quando("^eu divido (\\d+) por (\\d+)$")
+	public void eu_divido_por(int arg1, int arg2) throws Throwable {
+	    calculadora.dividir(arg1, arg2);
+	}
+	
+	@Então("^o resultado é \"?([^\"]*)\"?$")
+	public void o_resultado_é(String arg1) throws Throwable {
 	    assertEquals(arg1, calculadora.getResultado());
 	}
 }
