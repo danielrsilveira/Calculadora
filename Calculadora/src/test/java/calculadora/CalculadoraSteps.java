@@ -21,12 +21,6 @@ import io.github.bonigarcia.wdm.ChromeDriverManager;
 @ContextConfiguration
 public class CalculadoraSteps extends FluentCucumberTest{
 	
-	@Override 
-	public WebDriver newWebDriver() {
-		ChromeDriverManager.getInstance().setup();
-		return new ChromeDriver();
-	}
-	
 	@Dado("^que eu acabei de ligar minha calculadora$")
 	public void que_eu_acabei_de_ligar_minha_calculadora() throws Throwable {
 		goTo("http://localhost:8080");
@@ -56,6 +50,12 @@ public class CalculadoraSteps extends FluentCucumberTest{
 	@Então("^o resultado é \"([^\"]*)\"$")
 	public void o_resultado_é(String arg1) throws Throwable {
 		assertThat($("#total").text()).isEqualTo(arg1);
+	}
+	
+	@Override 
+	public WebDriver newWebDriver() {
+		ChromeDriverManager.getInstance().setup();
+		return new ChromeDriver();
 	}
 	
 	@Before
